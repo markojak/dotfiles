@@ -45,6 +45,13 @@ alias netflix='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --
 alias ng="npm list -g --depth=0 2>/dev/null"
 alias nl="npm list --depth=0 2>/dev/null"
 
+## Aliases for navigation
+
+alias ..='cd ..;ls -asl'
+alias ...='cd ../..;ls -asl'
+alias ....='cd ../../..;ls -asl'
+alias .....='cd ../../../..;ls -asl'
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
