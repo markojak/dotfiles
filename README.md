@@ -86,19 +86,10 @@ Mainly for appearances and for aliases / things that I want to work properly.
 
 - Install oh-my-zsh (sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)")
 
-- Install Powerline9k theme + Fonts
+- Install [Powerlevel10k with oh-my-zsh](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
 
 ```bash
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-
-# clone
-git clone https://github.com/powerline/fonts.git --depth=1
-# install
-cd fonts
-./install.sh
-# clean-up a bit
-cd ..
-rm -rf fonts
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 **Enabling Plugins (zsh-autosuggestions & zsh-syntax-highlighting)**
 - Download zsh-autosuggestions by
