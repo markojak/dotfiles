@@ -39,6 +39,13 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 - AWS
 - Helm
 
+## iterm2
+
+Based on Documentation from https://gitlab.com/gnachman/iterm2/-/wikis/Move-Settings-Between-Machines
+Not using DynamicState / Scripts etc. - So only restoring PREFERNCES
+
+
+
 ### ZSH + Powerlevel9k + Oh-my-ZSH
 
 1. Install [iTerm2 Stable Latest](https://iterm2.com/downloads/stable/latest)
