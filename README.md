@@ -1,8 +1,6 @@
 # My dotfiles + Configurations
 All Dotfiles + Themes
 
-0.
-
 1. Brew installation (Brewfile updated 30/12/2021)
 ```bash
 brew bundle install
@@ -56,22 +54,22 @@ npm list --global --parseable --depth=0 | sed '1d' | awk '{gsub(/\/.*\//,"",$1);
 ```bash
 xargs npm install --global < path/to/npmfilez
 ```
-## Documentation (New Mac)
+# Documentation (New Mac)
 Getting started - Make sure to install Xcode / Xcode Tools. `xcode-select --install`
 (Without this there is no git or Homebrew won't work either)
 
-- Install iTerm2 from Downloads Page
+1. Install iTerm2 from [Downloads](https://iterm2.com/downloads.html) Page
 
-- Install Homebrew with their CLI bash command
+2. Install [Homebrew](https://brew.sh/) with their CLI bash command
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-- To get this repository you'll need `.ssh` keys configured. This directory will be missing. A quick `ssh-keygen` will create the directory with the appropriate permissions.
+3. To get this repository you'll need `.ssh` keys configured. This directory will be missing. A quick `ssh-keygen` will create the directory with the appropriate permissions.
 You can then copy over the ssh keys as required __(not in this repository)__
 
-- Clone this repository and work through the installations in the various tools. The key tools to start with are:
+4. Clone this repository and work through the installations in the various tools. The key tools to start with are:
 
 - Terminal (iTerm2) + Profiles
 - .zsh Configuration and oh-my-zsh
@@ -79,8 +77,9 @@ You can then copy over the ssh keys as required __(not in this repository)__
 - Homebrew
 - Nvm + Node + Global Packages (v16.x at time of this writing)
 
-### Terminal setup
-This assumes you already have the xcode-tools installed (git) + iTerm2 installed
+## Terminal Setup
+This assumes you already have the xcode-tools installed (git) + iTerm2 installed.
+Mainly for appearances and for aliases / things that I want to work properly.
 
 - Load `com.googlecode.iterm2.plist` configuration usin the Preferences in the new iTerm2 instance to restore profile.
 [Additional Documentation](https://gitlab.com/gnachman/iterm2/-/wikis/Move-Settings-Between-Machines)
@@ -100,4 +99,30 @@ cd fonts
 # clean-up a bit
 cd ..
 rm -rf fonts
+```
+**Enabling Plugins (zsh-autosuggestions & zsh-syntax-highlighting)**
+- Download zsh-autosuggestions by
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
+```
+
+- Download zsh-syntax-highlighting by
+
+```bash
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting```
+
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+
+`git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+
+- Transfer .gitconfig and overwrite
+
+## Node / NVM / Global packages
+Next get up and running with [nvm](https://github.com/nvm-sh/nvm) which will manage node versions
+
+- Install using bash (note that the version would have changed)
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
