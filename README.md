@@ -66,6 +66,9 @@ Getting started - Make sure to install Xcode / Xcode Tools. `xcode-select --inst
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+**IMPORTANT** Make sure to install the Homebrew packages as per the Dumpfile provided `Brewfile` in this repository
+`brew bundle install` Looks for ~/Brewfile and installs its contents
+
 3. To get this repository you'll need `.ssh` keys configured. This directory will be missing. A quick `ssh-keygen` will create the directory with the appropriate permissions.
 You can then copy over the ssh keys as required __(not in this repository)__
 
@@ -91,21 +94,22 @@ Mainly for appearances and for aliases / things that I want to work properly.
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
+- Copy across the `zsh/.zshrc` configuration to `~`
+- Copy across the `zsh/.p10k.zsh` configuration to `~`
+
 **Enabling Plugins (zsh-autosuggestions & zsh-syntax-highlighting)**
-- Download zsh-autosuggestions by
+There are "zsh" plugins which require download before use. oh-my-zsh plugins load natively
+- Download zsh-autosuggestions
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 ```
 
-- Download zsh-syntax-highlighting by
+- Download zsh-syntax-highlighting
 
 ```bash
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting```
-
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-
-`git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+```
 
 - Transfer .gitconfig and overwrite
 
@@ -117,3 +121,18 @@ Next get up and running with [nvm](https://github.com/nvm-sh/nvm) which will man
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
+
+- Copy `$NVM_DIR/default-packages` across from this repository to `~/.nvm` - This will ensure that the global packages are maintained no matter what version of node you're using
+
+- Install node versions as required (Note that all global packages will be installed each time)
+
+## Python (Pyenv + pyenv-virtualenv)
+
+- Homebrew instructions above should have already installed pyenv. You can check this with `pyenv versions`
+
+- Install [pyenv-virtualenv Plugin](https://github.com/pyenv/pyenv-virtualenv)
+(Note that if on MacOS the package will be installed with the Brewfile above)
+
+- Install versions required
+
+##
